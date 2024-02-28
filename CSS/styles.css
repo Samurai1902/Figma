@@ -2,6 +2,91 @@
     .nav {margin: 0px 2% 0px 2%;}
     
 }
+
+@media (min-width: 1300px){
+    .info{
+        grid-template-columns: 33% 20px 33% 20px 33%
+    }
+    .technology{
+        grid-template-columns: repeat(3,1fr)
+    }
+    .technology__picture{
+        filter: grayscale(100%)
+    }
+    .scope{
+        grid-template-columns: repeat(3,1fr)
+    }
+    .package{
+        grid-template-columns: repeat(3,1fr)
+    }
+    .sites{
+        grid-template-columns: repeat(3,1fr)
+    }
+    .sites__site{
+        width: 450px;
+        height: 350px;
+    }
+    .scope__line{
+        min-width: 90%
+    }
+}
+@media (max-width: 1300px) {
+    .info{
+        grid-template-columns: 90% 20px
+    }
+    .technology{
+        grid-template-columns: repeat(2,1fr)
+    }
+    .technology__picture{
+        filter: grayscale(100%)
+    }
+    .scope{
+        grid-template-columns: repeat(2,1fr)
+    }
+    .package{
+        grid-template-columns: repeat(2,1fr)
+    }
+    .package__version{
+        margin-bottom: 20px
+    }
+    .sites{
+        grid-template-columns: repeat(2,1fr)
+    }
+    .sites__site{
+        width: 250px;
+        height: 250px;
+    }
+    .sites__img{
+        width: 200px;
+        height: 200px;
+    }
+}
+@media (max-width: 700px){
+    .technology{
+        grid-template-columns: 1fr
+    }
+    .technology__picture{
+        filter: grayscale(0%)
+    }
+    .scope{
+        grid-template-columns: 1fr
+    }
+    .package{
+        grid-template-columns: 1fr
+    }
+    .sites{
+        grid-template-columns: 1fr
+    }
+    .sites__site{
+        width: 150px;
+        height: 150px;
+    }
+    .sites__img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Proxima+Nova');
 
 body{
@@ -59,13 +144,14 @@ main {
     visibility: hidden;
 }
 .nav__subnav{
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    transition: filter 0.5s;
     display: flex;
     flex-direction: column;
     color:black;
     text-decoration: none;
-    background-color: rgb(235, 235, 235);
-    border-radius: 5%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2%;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 .nav__subnav-link{
@@ -73,6 +159,9 @@ main {
     text-decoration: none;
     font-size: 14px;
 }
+.nav__subnav-link:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
 .right-nav{
     display: flex;
     justify-content: flex-end;
@@ -192,6 +281,20 @@ main {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 3fr) auto;
 }
+.technology__picture{
+    position: relative;
+    overflow: hidden;
+}
+.technology__img{
+    height: auto;
+    transition: filter 0.5s;
+}
+.technology__img:hover{
+    filter: grayscale(0%);
+}
+.technology__img:not(hover){
+    filter: grayscale(100%);
+}
 .technology__item{
     display: flex;
     margin-bottom: 40px;
@@ -219,7 +322,7 @@ main {
 }
 .scope{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
     grid-template-rows: repeat(3, 1fr);
 }
 .scope__item{
