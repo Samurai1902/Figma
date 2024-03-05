@@ -1117,7 +1117,8 @@ input{
     }
 
     .app-thx{
-        grid-template-columns: 46% 46% 8%;;
+        grid-template-columns: 46% 46% 8%;
+    }
 
 }
 
@@ -1444,6 +1445,5 @@ input{
         flex-direction: column;
         display: flex;
     }
-
 
 }
