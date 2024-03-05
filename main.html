@@ -54,13 +54,15 @@
                             <input type="text" class="app__input-entry" placeholder="Имя">
                         </div>
                         <div class="app__input">
-                            <p><input type="tel" class="app__input-entry" placeholder="+7 (xxx) xxx-xx-xx" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"></p>
+                            <p><input type="tel" id="phone" class="app__input-entry" placeholder="+7 (xxx) xxx-xx-xx"></p>
+                            
                         </div>
                         <div class="app__input">
                             <input type="text" name="app__company-input" class="app__input-entry" placeholder="Компания">
                         </div>
                         <div class="app__input">
-                            <input type="email" name="app__email-input" class="app__input-entry" placeholder="Почта">
+                            <input type="email" id="email" name="app__email-input" class="app__input-entry" placeholder="Почта">
+                            
                         </div>
                     </div>
                     <div class="app__rate-block">
@@ -81,21 +83,23 @@
                     </div>
                     <div class="app__call">
                         <div class="app__input-call">
-                            <input type="text" name="app__call-input" class="app__call-input app__input-entry" placeholder="Сообщение">
+                            <textarea type="text" name="app__call-input" class="app__call-input app__input-entry" placeholder="Сообщение"></textarea>
                         </div>
                         <div class="app__call-bottom">
                             <div class="app__explanation">Опишите задачу, что необходимо<br/>будет делать.</div>
                             <div class="app__call-button">
-                                <button type="file" class="app__button-upload-file">прикрепить файл</button>
+                                <input type="file" id="file-input" class="app__upload-file">
+                                <button type="file" class="app__button-upload-file" onclick="document.getElementById('file-input').click()">прикрепить файл</button>
                             </div>
                         </div>
                     </div>
                     <div class="app__bottom">
                         <div class="app--bottom__button">
-                            <button type="button" class="app__bottom-send" onclick="openThx()">отправить</button>
+                            <button type="submit" class="app__bottom-send" onclick="openThx()">отправить</button>
                         </div>
-                        <div class="app__bottom-text">Нажимая на кнопку, вы соглашаетесь
-                            с <a href="#" class="app__bottom-link">Политикой персональных данных</a></div>
+                        <div class="app__bottom-text">Нажимая на кнопку, вы соглашаетесь с <br>
+                            <a href="#" class="app__bottom-link">Политикой персональных данных</a>
+                        </div>
                     </div>
                 </div>
                 <div class="app__cross"><img src="images/Cross.svg" class="app__cross-img" onclick="closePopUp()"></div>
@@ -105,12 +109,15 @@
     <section>
         <div class="container">
             <div class="app-thx">
-                <h1 class="app-thx__left-text">Спасибо</br>за обращение !</h1>
+                <div class="app-thx__text-logo">
+                    <a href="#"><img src="images/logo.svg" alt="Логотип компании" class="app-thx__logo-img"></a>
+                    <h1 class="app-thx__left-text">Спасибо</br>за обращение !</h1>
+                </div>
                 <div class="app-thx__right">
                     <p class="app-thx__right-text">Мы получили вашу заявку.</br>
                         В ближайшее время наш аккаунт-менеджер свяжется</br>
                         с вами. Удачного дня!</p>
-                    <button class="app-thx__right-btn" onclick="">отправить повторно</button>
+                    <button class="app-thx__right-btn" onclick="Send()">отправить повторно</button>
                 </div>
                 <div class="app-thx__cross"><img src="images/Cross.svg" class="app-thx__cross-img" onclick="closeThxPopUp()"></div>
             </div>

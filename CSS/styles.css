@@ -378,14 +378,18 @@ input{
 }
 
 .app__button-upload-file{
-    display: flex;
-    margin-right: 60px;
+    margin-right: 50px;
     border-color: #2632384D;
     background-color: #ffffff;
     border-radius: 5px;
-    max-width: 200px;
-    width: 120px;
-    height: 50px;
+    width: 140px;
+    height: 40px;
+    color:#676F73;
+    font-size: 10px;
+}
+
+.app__upload-file{
+    display: none;
 }
 
 .app__bottom{
@@ -410,7 +414,8 @@ input{
 
 .app__bottom-text{
     color: #A8ADAF;
-    margin-right: 60px; 
+    margin-right: 5px; 
+    text-align: right;
 }
 
 .app__bottom-link{
@@ -435,12 +440,13 @@ input{
     margin:auto;
     padding-top: 120px;
     animation: appAnimation 1s;
-}
+} 
 
 .app-thx__right-text{
     color: #676F73;
     font-size: 24px;
     font-weight: 400;
+    margin: 1px;
 }
 
 .app-thx__right{
@@ -452,6 +458,21 @@ input{
 .app-thx__left-text{
     display: flex;
     align-items: center;
+    margin-bottom: 1px;
+    width: 606px;
+    font-size: 60px;
+    font-weight: 600;
+    text-align: left;
+    Top: 256px;
+    Left: 80px;
+    margin-top: 45%;
+}
+
+.app-thx__logo-img{
+    width: 102px;
+    height: 41px;
+    top: 30px;
+    left: 80px;
 }
 
 .app-thx__right-btn{
@@ -466,7 +487,13 @@ input{
     margin-top: 25px;
 }
 
-.
+/* .app-thx__right{
+    width: 515px
+    height: 190px
+    top: 255px
+    left: 845px
+    border-radius: 4px
+} */
 
 
 @keyframes appAnimation{
@@ -1089,6 +1116,8 @@ input{
         grid-template-rows: repeat(2, 50%);
     }
 
+    .app-thx{
+        grid-template-columns: 46% 46% 8%;;
 
 }
 
@@ -1266,6 +1295,14 @@ input{
     .app__input-block{
         grid-row: 3;
     }
+
+    .app-thx{
+        grid-template-rows: 8% 15% 30%;
+    }
+
+    .app-thx__cross{
+        grid-row: 1;
+    }
 }
 
                                 /* Адаптация (х<700px) */
@@ -1335,7 +1372,7 @@ input{
         margin: 21px 30px 0 0;
     }
 
-     .support__picture{
+    .support__picture{
         visibility: hidden;
     }
 
